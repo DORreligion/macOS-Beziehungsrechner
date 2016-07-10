@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Beziehungsrechner
+
+  Created by Lukas Schramm on 16-07-10.
+  Copyright © 2016 Cappricorn. All rights reserved.
+*/
+
+"relationship rate: %@%%" = "%@%% Beziehungsrate";
+"%@ and %@ fit together to %@%%." = "%@ und %@ passen zu %@%% zusammen.";

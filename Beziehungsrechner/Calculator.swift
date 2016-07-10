@@ -87,7 +87,7 @@ class CalcRelation {
 extension String {
     var alphabetic: String {
         get {
-            return self.replacingOccurrences(of: "[^A-Za-z]", with: "", options: NSString.CompareOptions.regularExpressionSearch, range: nil)
+            return self.replacingOccurrences(of: "[^A-Za-z]", with: "", options: NSString.CompareOptions.regularExpression, range: nil)
         }
     }
     
