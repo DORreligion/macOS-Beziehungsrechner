@@ -25,11 +25,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         let calc = CalcRelation(names: [n1, n2])
         progressbar.doubleValue = Double(calc.getRelationRate())
         progressbar.toolTip = String(format: NSLocalizedString("relationship rate: %@%%", comment: "relationship rate: xx%"), String(calc.getRelationRate()))
-        //"\(calc.getRelationRate())% Beziehungsrate"
         
         outletLabel.stringValue = String(format: NSLocalizedString("%@ and %@ fit together to %@%%.", comment: ""), n1, n2, String(calc.getRelationRate()))
-        
-            //"\(n1) und \(n2) passen zu \(calc.getRelationRate()) % zusammen."
     }
     
     override func controlTextDidChange(_ obj: Notification) {
