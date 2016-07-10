@@ -11,6 +11,7 @@
 		3BD975FA1D3263E40084541C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD975F91D3263E40084541C /* ViewController.swift */; };
 		3BD975FC1D3263E40084541C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD975FB1D3263E40084541C /* Assets.xcassets */; };
 		3BD975FF1D3263E40084541C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD975FD1D3263E40084541C /* Main.storyboard */; };
+		3BD976071D326B910084541C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD976061D326B910084541C /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3BD975FB1D3263E40084541C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BD975FE1D3263E40084541C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BD976001D3263E40084541C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BD976061D326B910084541C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				3BD975F71D3263E40084541C /* AppDelegate.swift */,
 				3BD975F91D3263E40084541C /* ViewController.swift */,
+				3BD976061D326B910084541C /* Calculator.swift */,
 				3BD975FB1D3263E40084541C /* Assets.xcassets */,
 				3BD975FD1D3263E40084541C /* Main.storyboard */,
 				3BD976001D3263E40084541C /* Info.plist */,
@@ -136,6 +139,7 @@
 			files = (
 				3BD975FA1D3263E40084541C /* ViewController.swift in Sources */,
 				3BD975F81D3263E40084541C /* AppDelegate.swift in Sources */,
+				3BD976071D326B910084541C /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,9 +247,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Beziehungsrechner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = dor.cappricorn.mac.Beziehungsrechner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -256,9 +262,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Beziehungsrechner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = dor.cappricorn.mac.Beziehungsrechner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -284,6 +292,7 @@
 				3BD976051D3263E40084541C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

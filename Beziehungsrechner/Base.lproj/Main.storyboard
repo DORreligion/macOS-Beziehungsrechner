@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11129.15"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Beziehungsrechner" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -662,11 +664,11 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Beziehungsrechner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="150"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="150"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -679,11 +681,111 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Beziehungsrechner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xDC-lM-uNm">
+                                <rect key="frame" x="174" y="80" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EIU-oh-0Qe"/>
+                                    <constraint firstAttribute="width" constant="120" id="UBf-yQ-fEf"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Berechnen" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eD7-Ew-xyK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="calculate:" target="XfG-lQ-9wD" id="KU8-bj-8G0"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="acu-Sx-c0s">
+                                <rect key="frame" x="18" y="16" width="444" height="17"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="N segne euch!" id="Fu6-vV-NIf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFb-ZL-eRE">
+                                <rect key="frame" x="20" y="118" width="440" height="22"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0mI-Fn-rCa">
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Erster Name" drawsBackground="YES" id="xIL-ML-cTa">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="XfG-lQ-9wD" id="ykI-bm-I4T"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-Yd-QlH">
+                                        <rect key="frame" x="225" y="0.0" width="215" height="22"/>
+                                        <subviews>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S9W-sa-DUn">
+                                                <rect key="frame" x="0.0" y="0.0" width="215" height="22"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Zweiter Name" drawsBackground="YES" id="CZ2-PI-XO2">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="YzS-w3-xRz"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Oqp-hb-bYt">
+                                <rect key="frame" x="20" y="74" width="440" height="5"/>
+                            </box>
+                            <progressIndicator wantsLayer="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="sV6-Ag-upF">
+                                <rect key="frame" x="20" y="47" width="440" height="20"/>
+                            </progressIndicator>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sV6-Ag-upF" secondAttribute="trailing" constant="20" id="4rc-vI-Hv4"/>
+                            <constraint firstItem="acu-Sx-c0s" firstAttribute="top" secondItem="sV6-Ag-upF" secondAttribute="bottom" constant="15" id="7dN-3w-Kbn"/>
+                            <constraint firstItem="sFb-ZL-eRE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="AAM-fh-gsG"/>
+                            <constraint firstItem="sV6-Ag-upF" firstAttribute="top" secondItem="Oqp-hb-bYt" secondAttribute="bottom" constant="10" id="Efg-tv-k8p"/>
+                            <constraint firstItem="sFb-ZL-eRE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="FU5-YB-FmI"/>
+                            <constraint firstAttribute="trailing" secondItem="sFb-ZL-eRE" secondAttribute="trailing" constant="20" id="I0Q-q3-so3"/>
+                            <constraint firstAttribute="trailing" secondItem="Oqp-hb-bYt" secondAttribute="trailing" constant="20" id="Otd-b8-OyG"/>
+                            <constraint firstItem="acu-Sx-c0s" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="TEr-uH-oIT"/>
+                            <constraint firstItem="xDC-lM-uNm" firstAttribute="top" secondItem="sFb-ZL-eRE" secondAttribute="bottom" constant="10" id="Ya4-1b-DlL"/>
+                            <constraint firstAttribute="trailing" secondItem="acu-Sx-c0s" secondAttribute="trailing" constant="20" id="cDc-5D-9pM"/>
+                            <constraint firstItem="Oqp-hb-bYt" firstAttribute="top" secondItem="xDC-lM-uNm" secondAttribute="bottom" constant="10" id="dfU-rO-8YW"/>
+                            <constraint firstItem="sFb-ZL-eRE" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="fuQ-Ks-DXT"/>
+                            <constraint firstItem="sV6-Ag-upF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="heM-Cy-R0W"/>
+                            <constraint firstItem="Oqp-hb-bYt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="oPu-wS-36k"/>
+                            <constraint firstItem="xDC-lM-uNm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="rA6-9f-rjs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calculateButton" destination="xDC-lM-uNm" id="6f4-mN-rBb"/>
+                        <outlet property="name1" destination="0mI-Fn-rCa" id="IAV-b8-bhD"/>
+                        <outlet property="name2" destination="S9W-sa-DUn" id="XbW-pf-iX3"/>
+                        <outlet property="outletLabel" destination="acu-Sx-c0s" id="NQH-7r-L6f"/>
+                        <outlet property="progressbar" destination="sV6-Ag-upF" id="aVM-5H-tXO"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
